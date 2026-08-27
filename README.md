@@ -1,10 +1,26 @@
-# Building a Virtual Firewall with pfSense
+<div align="center">
+
+# 🔥 Building a Virtual Firewall with pfSense
 
 *A hands-on lab documenting the build and configuration of a pfSense firewall VM in VMware Workstation — from installation through custom firewall rules and full traffic routing.*
 
-![Platform](https://img.shields.io/badge/platform-VMware%20Workstation-607078?style=flat-square)
-![Firewall](https://img.shields.io/badge/firewall-pfSense%20CE-212121?style=flat-square)
-![Status](https://img.shields.io/badge/status-complete-2E8B57?style=flat-square)
+![Platform](https://img.shields.io/badge/platform-VMware%20Workstation-607078?style=for-the-badge&logo=vmware&logoColor=white)
+![Firewall](https://img.shields.io/badge/firewall-pfSense%20CE-212121?style=for-the-badge)
+![Status](https://img.shields.io/badge/status-complete-2E8B57?style=for-the-badge)
+
+</div>
+
+---
+
+### 📋 At a glance
+
+| | |
+|---|---|
+| **Goal** | Stand up a pfSense firewall, write real rules, and route live traffic through it |
+| **Hypervisor** | VMware Workstation |
+| **Firewall** | pfSense Community Edition |
+| **Key skill demonstrated** | Firewall rule logic (block / pass / rule ordering), network routing, virtualization |
+| **Outcome** | Successfully blocked a specific domain for the entire LAN while preserving normal internet access |
 
 ---
 
@@ -16,8 +32,9 @@
 - [Creating firewall rules](#creating-firewall-rules)
 - [Routing host traffic through the firewall](#routing-host-traffic-through-the-firewall)
 - [Validation](#validation)
+- [Skills demonstrated](#-skills-demonstrated)
 - [Lessons learned](#lessons-learned)
-- [Repo structure](#repo-structure)
+- [Repo structure](#-repo-structure)
 
 ---
 
@@ -195,6 +212,37 @@ With traffic now flowing through pfSense, tested both outcomes:
 
 ![Blocked domain confirmation](screenshots/25-blocked-domain.png)
 
+## 🧠 Skills demonstrated
+
+<table>
+<tr>
+<td width="33%" valign="top">
+
+**Firewall administration**
+- Rule creation (block / pass / reject)
+- Rule ordering and evaluation logic
+- Aliases for maintainable rule sets
+
+</td>
+<td width="33%" valign="top">
+
+**Networking**
+- Static IP configuration
+- Default gateway routing
+- DNS server assignment
+
+</td>
+<td width="33%" valign="top">
+
+**Virtualization**
+- VM provisioning in VMware
+- Bridged networking configuration
+- Guest OS installation (FreeBSD-based)
+
+</td>
+</tr>
+</table>
+
 ## Lessons learned
 
 > [!IMPORTANT]
@@ -209,7 +257,10 @@ With traffic now flowing through pfSense, tested both outcomes:
 > [!TIP]
 > **A firewall only affects traffic that actually passes through it.** Writing correct rules isn't enough — the network's routing (default gateways, both on the firewall and on client machines) has to actually direct traffic through the firewall for those rules to take effect.
 
-## Repo structure
+## 📁 Repo structure
+
+<details>
+<summary>Click to expand</summary>
 
 ```
 .
@@ -242,6 +293,12 @@ With traffic now flowing through pfSense, tested both outcomes:
     └── 25-blocked-domain.png
 ```
 
+</details>
+
 ---
 
+<div align="center">
+
 *Built as part of Security Blue Team's BTL1 (Blue Team Level 1) optional coursework.*
+
+</div>
